@@ -21,19 +21,19 @@ export default function Search() {
   // Required state variables
   const [colors, setColors] = useState<Color[]>([]);
   const [search, setSearch] = useState<string>("");
-  const [searchResults, setSearchResults] = useState<Color[]>([]);
+  // const [searchResults, setSearchResults] = useState<Color[]>([]);
 
   useEffect(() => {
     fetchColors();
   }, []);
 
-  useEffect(() => {
-    // Filter colors based on search term
-    const filtered = colors.filter((color) =>
-      color.color.toLowerCase().includes(search.toLowerCase())
-    );
-    setSearchResults(filtered);
-  }, [colors, search]);
+  // useEffect(() => {
+  //   // Filter colors based on search term
+  //   const filtered = colors.filter((color) =>
+  //     color.color.toLowerCase().includes(search.toLowerCase())
+  //   );
+  //   setSearchResults(filtered);
+  // }, [colors, search]);
 
   const fetchColors = () => {
     const response = axios.get("/constants/colors.json");
@@ -60,12 +60,12 @@ export default function Search() {
         </InputGroup>
       </Flex>
       <Container maxW={"6xl"} py={8}>
-        {searchResults.length > 0 ? (
+        {colors.length > 0 ? (
           <SimpleGrid
             columns={{ base: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
             spacing={8}
           >
-            {searchResults.map((color) => (
+            {colors.map((color) => (
               <div key={color.value}>
                 <ColorCard hex={color.value} color={color.color} />
               </div>
