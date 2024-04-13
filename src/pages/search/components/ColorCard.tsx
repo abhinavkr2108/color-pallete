@@ -1,5 +1,4 @@
 import { Box, Card, Text, useToast } from "@chakra-ui/react";
-import React from "react";
 
 interface ColorCardProps {
   color: string;

@@ -3,7 +3,6 @@ import {
   Button,
   Flex,
   IconButton,
-  Input,
   List,
   ListItem,
   Spacer,
@@ -24,7 +23,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = React.useRef<HTMLButtonElement>(null);
   const navItems = [
     {
       name: "Home",
