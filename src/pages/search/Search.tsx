@@ -35,9 +35,9 @@ export default function Search() {
     setSearchResults(filtered);
   }, [colors, search]);
 
-  const fetchColors = async () => {
-    const response = await axios.get("/constants/colors.json");
-    setColors(response.data);
+  const fetchColors = () => {
+    const response = axios.get("/constants/colors.json");
+    response.then((data) => setColors(data.data));
   };
 
   return (
