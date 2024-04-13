@@ -91,7 +91,7 @@ export default function Header() {
 
           <DrawerBody>
             {navItems.map((item) => (
-              <List>
+              <List key={item.name}>
                 <ListItem key={item.name} onClick={onClose}>
                   <Link to={item.link}>{item.name}</Link>
                 </ListItem>

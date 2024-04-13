@@ -66,7 +66,9 @@ export default function Search() {
             spacing={8}
           >
             {searchResults.map((color) => (
-              <ColorCard hex={color.value} color={color.color} />
+              <div key={color.value}>
+                <ColorCard hex={color.value} color={color.color} />
+              </div>
             ))}
           </SimpleGrid>
         ) : (
