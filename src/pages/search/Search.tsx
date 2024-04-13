@@ -36,7 +36,7 @@ export default function Search() {
   }, [colors, search]);
 
   const fetchColors = async () => {
-    const response = await axios.get("/constants/colors.json");
+    const response = await axios.get("/colors.json");
     setColors(response.data);
   };
 
